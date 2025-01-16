@@ -32,9 +32,10 @@ fev1_sampled
 
 fev1_plot <- ggplot(data = fev1_sampled, 
                     aes(x = FEV1, y = age)) +
-    geom_point() + labs(X= "FEV", y="Age", title = " Plot showing Age and FEV")
+    geom_point() + labs(X= "FEV", y="Age in Years",
+                        title = " Plot showing Age and FEV with a line")
 
-fev1_plot
+fev1_plot+geom_smooth(color="red")
 
 # Activity 6 - Improving the plot
 
