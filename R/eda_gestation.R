@@ -19,7 +19,6 @@ count(Gestation)
 
 # number of observations per racial group
 count(Gestation, race)
-
 # number of observations by racial group and level of mother's education
 Gestation_n_race_ed <- count(Gestation, ...)
 

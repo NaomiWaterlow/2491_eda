@@ -10,7 +10,7 @@ library(tidyverse)
 
 # read the data in
 fev1 <- read_csv("../data/fev1.csv", col_types = list('id' = 'f'))
-
+plot(fev1$age, fev1$FEV1)
 # sample the data so that we have 20 patients with more than 6 observations
 
 fev1_sampled <- fev1 %>% 
@@ -31,10 +31,11 @@ fev1_sampled
 # Build a plot that shows the relationship between FEV1 and age
 
 fev1_plot <- ggplot(data = fev1_sampled, 
-                    aes(x = ..., y = ...)) +
-    geom_point()
+                    aes(x = FEV1, y = age)) +
+    geom_point() + labs(X= "FEV", y="Age in Years",
+                        title = " Plot showing Age and FEV with a line")
 
-fev1_plot
+fev1_plot+geom_smooth(color="red")
 
 # Activity 6 - Improving the plot
 
